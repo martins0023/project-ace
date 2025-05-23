@@ -1,0 +1,31 @@
+/* Preloader.css */
+
+/* assume your logo.svg paths have a stroke defined */
+.svg-logo path {
+    stroke: #2356D3; /* secondary color */
+    stroke-width: 2;
+    fill: none;      /* start transparent */
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+  }
+  
+  /* Animate each path: draw in, then fill */
+  .svg-logo path {
+    animation: draw 2s ease-in-out forwards,
+               fill 2s ease-in-out 2s forwards;
+  }
+  
+  /* draw the outline */
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* then fill between primary & secondary */
+  @keyframes fill {
+    0%   { fill: none; }
+    50%  { fill: #2356D3; }   /* secondary */
+    100% { fill: #040C11; }   /* primary */
+  }
+  
