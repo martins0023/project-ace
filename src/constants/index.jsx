@@ -6,7 +6,7 @@ import user3 from "../assets/profile-pictures/user3.jpg";
 import user4 from "../assets/profile-pictures/user4.jpg";
 import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
-import { ace1, ace10, ace11, ace12, ace13, ace14, ace2, ace3, ace4, ace6, ace9 } from "../assets";
+import { ace1, ace11, ace12, ace13, ace14, ace2, ace3, ace4, ace6, ace9, service10, service11, service12, service9 } from "../assets";
 
 export const navItems = [
   { label: "Events Centers", href: "#" },
@@ -103,26 +103,26 @@ export const reviews = [
 export const features = [
   {
     icon: <Building2 />,
-    text: "Conferences",
-    image: ace10,
-    tagline: "Luxury for you",
+    text: "Beauty",
+    image: service12,
+    tagline: "Cover your event",
   },
   {
     icon: <Theater />,
-    text: "Ceremonies",
-    image: ace11,
+    text: "Entertainment",
+    image: service10,
     tagline: "Cozy celebrations",
   },
   {
     icon: <MapPinned />,
-    text: "Workspace",
-    image: ace13,
+    text: "Event Planning",
+    image: service11,
     tagline: "Privacy is yours",
   },
   {
     icon: <Hotel />,
-    text: "Hotels",
-    image: ace14,
+    text: "Fashion",
+    image: service9,
     tagline: "A second home",
   },
 ];

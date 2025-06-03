@@ -1,9 +1,14 @@
 import { CheckCircle2, MoveUpRight } from "lucide-react";
 import { eventsCentres, hotels, reviews } from "../constants";
 import { MapPin, Star } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { services, users } from "../pages/Services/constants";
 
 const Deals = () => {
+  const { id } = useParams();
+  const svc = services.find((s) => String(s.id) === id);
+
+  // const owner = users.find((u) => u.id === svc.userId);
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -27,11 +32,11 @@ const Deals = () => {
             <div className="mt-5 flex flex-row justify-between">
               <div className="flex flex-col">
                 <p className="text-white font-monument text-3xl sm:text-4xl lg:text-5xl">
-                  Hotels
+                  Event Planing
                 </p>
                 <p className="font-montserrat text-base text-white mt-2">
-                  Get a satisfied hotel for your engagement and upcoming
-                  ceremonies.
+                  Get satisfied services for your engagement and upcoming
+                  ceremonies or events.
                 </p>
               </div>
               <div onClick={handleNavigate} className="bg-white rounded-full w-fit h-fit p-3 cursor-pointer">
@@ -63,27 +68,27 @@ const Deals = () => {
           </div>
         </div>
 
-        <div className="p-2 flex flex-row gap-1 justify-evenly w-full lg:w-1/2">
-          {hotels.map((hotel, index) => (
+        <div className="p-2 flex flex-row gap-1 justify-evenly w-full lg:w-1/2 cursor-pointer">
+          {services.slice(0, 2).map((service, index) => (
             <div
+              onClick={() => navigate(`/services/${service.id}`)}
               key={index}
               className="bg-white rounded-3xl w-full shadow-lg overflow-hidden"
             >
-              {/* Hotel Image */}
               <img
-                src={hotel.image}
-                alt={hotel.hotelname}
+                src={service.image}
+                alt={service.title}
                 className="w-full h-48 object-cover"
               />
 
               {/* Hotel Details */}
               <div className="bg-black p-4 h-full text-white">
                 <p className="font-montserrat-alternates sm:text-lg font-semibold text-sm">
-                  {hotel.hotelname}
+                  {service.title}
                 </p>
                 <p className="font-montserrat text-xs sm:text-base flex items-center gap-1 mt-1">
                   <MapPin className="w-4 h-4" />
-                  {hotel.address}
+                  {service.type}
                 </p>
 
                 {/* Rating and Price Section */}
@@ -100,7 +105,7 @@ const Deals = () => {
                   </div>
 
                   <p className="font-semibold text-white text-xs sm:text-base">
-                    #{hotel.price?.toLocaleString()}
+                    ${service.price?.toLocaleString()}
                   </p>
                 </div>
               </div>
@@ -120,8 +125,8 @@ const Deals = () => {
                   Meetings & conferences
                 </p>
                 <p className="font-montserrat text-base text-white mt-2">
-                  Get a satisfied hotel for your engagement and upcoming
-                  ceremonies.
+                  Get a satisfied meeting and conferences for your engagement and upcoming
+                  event.
                 </p>
               </div>
               <div onClick={handleNavigate} className="bg-white rounded-full w-fit h-fit p-3 cursor-pointer">

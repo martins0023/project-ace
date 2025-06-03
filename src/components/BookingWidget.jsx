@@ -23,7 +23,7 @@ export default function BookingWidget() {
       <div className="font-host-grotesk absolute inset-0 flex flex-col justify-center p-4 text-white">
         {/* Title */}
         <h3 className="font-host-grotesk text-center text-2xl sm:text-2xl font-semibold mb-4">
-          Find Events Centre
+          Find a Service
         </h3>
 
         {/* Form Container */}
@@ -35,7 +35,7 @@ export default function BookingWidget() {
                 className="block text-sm font-medium mb-1"
                 htmlFor="checkin"
               >
-                Check in
+                Start Date
               </label>
               <input
                 type="date"
@@ -48,7 +48,7 @@ export default function BookingWidget() {
                 className="block text-sm font-medium mb-1"
                 htmlFor="checkout"
               >
-                Check out
+                End Date
               </label>
               <input
                 type="date"
@@ -61,7 +61,7 @@ export default function BookingWidget() {
           {/* Estimated Capacity */}
           <div className="mb-1 pt-1">
             <span className="text-[#292929] font-host-grotesk font-normal mb-1 text-xl">
-              Estimated Capacity
+              Estimated Budget
             </span>
           </div>
           <div className="flex flex-col sm:flex-row sm:space-x-2 mb-3">
@@ -75,7 +75,7 @@ export default function BookingWidget() {
               <input
                 type="number"
                 id="minCapacity"
-                placeholder="300"
+                placeholder="$300"
                 className="w-full px-3 py-2 rounded-md text-black border"
               />
             </div>
@@ -89,7 +89,7 @@ export default function BookingWidget() {
               <input
                 type="number"
                 id="maxCapacity"
-                placeholder="2000"
+                placeholder="$2000"
                 className="w-full px-3 py-2 rounded-md text-black border"
               />
             </div>

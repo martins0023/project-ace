@@ -1,5 +1,6 @@
 // src/components/LoginEmail.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Eye,
   EyeOff,
@@ -39,10 +40,10 @@ export default function SignUpEmail({ onLogin }) {
         onSubmit={handleSubmit}
         className="max-w-md w-full font-host-grotesk bg-white shadow-md rounded-xl p-6 space-y-6"
       >
-        <div className="flex items-center gap-2 mb-4">
+        <Link to="/" className="flex cursor-pointer items-center gap-2 mb-4">
           <img src={logo} alt="logo" className="w-20 h-20" />
           <p className="font-monument">project ace</p>
-        </div>
+        </Link>
         <h2 className="text-2xl font-semibold text-gray-800 text-center">
           Sign Up Using Email
         </h2>
